@@ -498,6 +498,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114358980170684212, guid: 125e73d6e521227498ae1bd9d4267276,
+        type: 2}
+      propertyPath: autoPlay
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 125e73d6e521227498ae1bd9d4267276, type: 2}
   m_IsPrefabParent: 0
@@ -1893,6 +1898,11 @@ Prefab:
       propertyPath: paddle
       value: 
       objectReference: {fileID: 1825015666}
+    - target: {fileID: 82355660903461594, guid: 897761c0888471349b6fff03242de6ac,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 897761c0888471349b6fff03242de6ac, type: 2}
   m_IsPrefabParent: 0

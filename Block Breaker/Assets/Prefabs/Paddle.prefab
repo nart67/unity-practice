@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ea9dbcb3e5ce74e9312ba89ba37905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoPlay: 0
 --- !u!212 &212506672573456782
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4968780832790492, guid: 0746e4c46a38d7e4bab4571aa7490c42, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 212641505052976852, guid: 0746e4c46a38d7e4bab4571aa7490c42,
         type: 2}
@@ -174,7 +174,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4657067984657300, guid: b6f0f98b0e6e3c44d9ba6d3f4b849111, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 9.92
       objectReference: {fileID: 0}
     - target: {fileID: 4657067984657300, guid: b6f0f98b0e6e3c44d9ba6d3f4b849111, type: 2}
       propertyPath: m_LocalPosition.z
@@ -216,7 +216,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4657067984657300, guid: 7f92dc6986da0654fa7802f3b2491025, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10.96
+      value: 10.88
       objectReference: {fileID: 0}
     - target: {fileID: 4657067984657300, guid: 7f92dc6986da0654fa7802f3b2491025, type: 2}
       propertyPath: m_LocalPosition.z
@@ -245,34 +245,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f92dc6986da0654fa7802f3b2491025, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &779107279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 779107280}
-  m_Layer: 0
-  m_Name: Bricks
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &779107280
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 779107279}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1061830329
 Prefab:
   m_ObjectHideFlags: 0
@@ -386,7 +358,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4017034749267826, guid: 0ec65336717b91448bbece5a6fe934b5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 9.92
       objectReference: {fileID: 0}
     - target: {fileID: 4017034749267826, guid: 0ec65336717b91448bbece5a6fe934b5, type: 2}
       propertyPath: m_LocalPosition.z
