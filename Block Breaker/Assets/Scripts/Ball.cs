@@ -11,21 +11,32 @@ public class Ball : MonoBehaviour {
 	void Start () {
         paddle = GameObject.FindObjectOfType<Paddle>();
         paddleToBallVector = this.transform.position - paddle.transform.position;
-        print(paddleToBallVector.y);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         // Lock ball to paddle
-        if (!hasStarted) this.transform.position = paddle.transform.position + paddleToBallVector;
-
-        // Wait for mouse press to launch
-        if (Input.GetMouseButtonDown(0))
+        if (!hasStarted)
         {
-            print("Mouse clicked, launch ball");
-            hasStarted = true;
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 10f);
+            this.transform.position = paddle.transform.position + paddleToBallVector;
+
+            // Wait for mouse press to launch
+            if (Input.GetMouseButtonDown(0))
+            {
+                print("Mouse clicked, launch ball");
+                hasStarted = true;
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 10f);
+            }
         }
 
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print(hasStarted);
+        if (hasStarted)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }
