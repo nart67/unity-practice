@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour {
 
+    public AudioClip crack;
+    public static int breakableCount = 0;
     private LevelManager levelManager;
-    public int maxHits;
     private int timesHit;
     public Sprite[] hitSprites;
+    private bool isBreakable;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        isBreakable = this.tag == "Breakable";
+        if (isBreakable)
+        {
+            breakableCount++;
+        }
         timesHit = 0;
         levelManager = GameObject.FindObjectOfType<LevelManager>();
 	}
@@ -22,10 +29,22 @@ public class Brick : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioSource.PlayClipAtPoint(crack, transform.position);
+        if (isBreakable)
+        {
+            HandleHits();
+        }
+    }
+
+    void HandleHits ()
+    {
         timesHit++;
+        int maxHits = hitSprites.Length + 1;
         if (timesHit >= maxHits)
         {
+            breakableCount--;
             Destroy(gameObject);
+            levelManager.BrickDestroyed();
         }
         else
         {
@@ -33,14 +52,12 @@ public class Brick : MonoBehaviour {
         }
     }
 
-    private void Win()
-    {
-        levelManager.LoadNextLevel();
-    }
-
     private void LoadSprites()
     {
         int spriteIndex = timesHit - 1;
-        this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        if (hitSprites[spriteIndex])
+        {
+            this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        }
     }
 }
