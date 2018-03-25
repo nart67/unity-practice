@@ -8,17 +8,14 @@ public class EnemySpawner : MonoBehaviour {
     public float height = 5f;
     private bool movingRight = true;
     public float speed = 5f;
+    public float spawnDelay = 0.5f;
 
     private float xmin;
     private float xmax;
 
     // Use this for initialization
     void Start () {
-        foreach (Transform child in transform)
-        {
-            GameObject enemy = Instantiate(enemyPrefab, child.position, Quaternion.identity) as GameObject;
-            enemy.transform.parent = child;
-        }
+        SpawnEnemies();
 
         float distanceToCamera = transform.position.z - Camera.main.transform.position.z;
         Vector3 leftBoundary = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distanceToCamera));
@@ -49,7 +46,51 @@ public class EnemySpawner : MonoBehaviour {
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
 
+        if (AllMembersDead())
+        {
+            SpawnUntilFull();
+        }
+    }
 
+    private Transform NextFreePosition()
+    {
+        foreach (Transform childPositionGameObject in transform)
+        {
+            if (childPositionGameObject.childCount == 0) return childPositionGameObject.transform;
+        }
+        return null;
+    }
+
+    private bool AllMembersDead()
+    {
+        foreach(Transform childPositionGameObject in transform)
+        {
+            if (childPositionGameObject.childCount > 0) return false;
+        }
+        return true;
+    }
+
+    private void SpawnEnemies()
+    {
+        foreach (Transform child in transform)
+        {
+            GameObject enemy = Instantiate(enemyPrefab, child.position, Quaternion.identity) as GameObject;
+            enemy.transform.parent = child;
+        }
+    }
+
+    private void SpawnUntilFull()
+    {
+        Transform freePosition = NextFreePosition();
+        if (freePosition)
+        {
+            GameObject enemy = Instantiate(enemyPrefab, freePosition.position, Quaternion.identity) as GameObject;
+            enemy.transform.parent = freePosition;
+        }
+        if (NextFreePosition())
+        {
+            Invoke("SpawnUntilFull", spawnDelay);
+        }
     }
 
     public void OnDrawGizmos()

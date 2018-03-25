@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 60383695187406082}
   - component: {fileID: 114120485818866748}
   - component: {fileID: 50256672909946290}
+  - component: {fileID: 95903488431503218}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -114,6 +115,23 @@ PolygonCollider2D:
       - {x: -0.074999996, y: -0.38}
       - {x: 0.125, y: -0.19}
       - {x: 0.145, y: -0.16}
+--- !u!95 &95903488431503218
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104499383166894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c046f4907067c9c4f90d6e7bdf91d569, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114120485818866748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +147,9 @@ MonoBehaviour:
   shotsPerSecond: 0.5
   projectile: {fileID: 1801254881101938, guid: 1d4c4b07a03515a4faf2d2470af2cb41, type: 2}
   projectileSpeed: 10
+  fireSound: {fileID: 8300000, guid: 35784a3d04c09a449bbc50bd06cbc71a, type: 3}
+  deathSound: {fileID: 8300000, guid: 973ab89f81077484cace17ed039ca80e, type: 3}
+  scoreValue: 150
 --- !u!212 &212980000223712858
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -160,8 +181,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 409071481
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d3d5982616413eb4581977fe74a0dc60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
